@@ -6,11 +6,11 @@
 /*   By: hwon <hwon@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 12:31:32 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/03 13:37:31 by hwon             ###   ########.fr       */
+/*   Updated: 2021/05/03 14:17:20 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_bzero.h"
+#include "libft.h"
 
 void	bzero(void *s, size_t n)
 {

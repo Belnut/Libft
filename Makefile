@@ -6,7 +6,7 @@
 #    By: hwon <hwon@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 03:10:18 by hwon              #+#    #+#              #
-#    Updated: 2021/05/03 13:44:16 by hwon             ###   ########.fr        #
+#    Updated: 2021/05/03 14:42:31 by hwon             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,9 @@ SRCS	= srcs/ft_memset.c\
 		  srcs/ft_memcpy.c\
 		  srcs/ft_memccpy.c\
 		  srcs/ft_memmove.c\
-		  srcs/ft_memchr.c
+		  srcs/ft_memchr.c\
+		  srcs/ft_strlen.c\
+		  srcs/ft_strlcpy.c
 OBJS	= ${SRCS:.c=.o}
 INCS	= includes/
 CC		= gcc
@@ -40,5 +42,9 @@ fclean : clean
 	${RM} ${NAME}
 
 re : fclean all
+
+norm :
+	norminette -R CheckForbiddenSourceHeader ${SRCS}
+	norminette -R CheckDefine ${INCS}/*
 
 .PHONY: all clean fclean re .c.o

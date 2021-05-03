@@ -6,11 +6,11 @@
 /*   By: hwon <hwon@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 13:04:10 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/03 13:36:41 by hwon             ###   ########.fr       */
+/*   Updated: 2021/05/03 14:17:38 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_memccpy.h"
+#include "libft.h"
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
