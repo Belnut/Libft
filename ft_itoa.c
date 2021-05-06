@@ -6,7 +6,7 @@
 /*   By: hwon <ohj8447@gmail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 16:51:45 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/06 22:13:20 by hwon             ###   ########.fr       */
+/*   Updated: 2021/05/07 01:40:02 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ char	*ft_itoa(int n)
 
 	len = digit_len(n);
 	dup = malloc(len + 1);
-	ft_memset(dup, 0, len + 1);
 	if (!dup)
 		return (0);
+	ft_memset(dup, 0, len + 1);
 	num = n;
 	if (n < 0)
 	{

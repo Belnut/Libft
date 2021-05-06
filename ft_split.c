@@ -6,7 +6,7 @@
 /*   By: hwon <ohj8447@gmail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 16:55:24 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/07 00:19:15 by hwon             ###   ########.fr       */
+/*   Updated: 2021/05/07 02:03:03 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int		ft_count_words(const char *str, char c)
 	return (count);
 }
 
-char	*ft_strndup(const char *str, int n)
+char	*ft_strndup(const char *str, size_t n)
 {
 	char	*dup;
 	char	*anchor;
@@ -87,6 +87,8 @@ char	**ft_split(const char *str, char c)
 	char	**words;
 	int		size;
 
+	if (!str)
+		return (0);
 	size = ft_count_words(str, c);
 	words = malloc(sizeof(char *) * (size + 1));
 	if (words == 0)

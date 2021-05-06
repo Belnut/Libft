@@ -6,7 +6,7 @@
 /*   By: hwon <ohj8447@gmail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 14:41:52 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/06 20:13:28 by hwon             ###   ########.fr       */
+/*   Updated: 2021/05/07 01:34:48 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*dup;
 
-	if (count <= 0 || size <= 0)
+	if (count < 0 || size < 0)
 		return (0);
 	dup = malloc(count * size);
 	if (!dup)
 		return (0);
-	ft_memset(dup, 0, count * size);
+	dup = ft_memset(dup, 0, count * size);
 	return (dup);
 }

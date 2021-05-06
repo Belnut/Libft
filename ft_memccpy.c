@@ -6,7 +6,7 @@
 /*   By: hwon <hwon@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 13:04:10 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/03 14:17:38 by hwon             ###   ########.fr       */
+/*   Updated: 2021/05/07 01:14:08 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	while (n-- != 0)
 	{
 		*d++ = *s++;
-		if (*(s - 1) == c)
+		if (*(s - 1) == (unsigned char)c)
 			return (void *)(d);
 	}
 	return (0);

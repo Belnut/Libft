@@ -6,7 +6,7 @@
 /*   By: hwon <hwon@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:07:38 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/06 21:27:11 by hwon             ###   ########.fr       */
+/*   Updated: 2021/05/07 01:22:05 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strrchr(const char *s, int c)
 	char	*hook;
 
 	hook = 0;
-	if (!s)
-		return (0);
 	while (*s)
 	{
 		if (*s == c)
