@@ -6,7 +6,7 @@
 #    By: hwon <hwon@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 03:10:18 by hwon              #+#    #+#              #
-#    Updated: 2021/05/06 14:46:29 by hwon             ###   ########.fr        #
+#    Updated: 2021/05/06 18:14:38 by hwon             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,12 @@ SRCS	= srcs/ft_memset.c\
 		  srcs/ft_tolower.c\
 		  srcs/ft_atoi.c\
 		  srcs/ft_calloc.c\
-		  srcs/ft_strdup.c
+		  srcs/ft_strdup.c\
+		  srcs/ft_substr.c\
+		  srcs/ft_strjoin.c\
+		  srcs/ft_strtrim.c\
+		  srcs/ft_split.c\
+		  srcs/ft_itoa.c
 OBJS	= ${SRCS:.c=.o}
 INCS	= includes/
 CC		= gcc
