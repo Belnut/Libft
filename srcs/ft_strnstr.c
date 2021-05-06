@@ -6,7 +6,7 @@
 /*   By: hwon <hwon@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:14:02 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/03 15:26:23 by hwon             ###   ########.fr       */
+/*   Updated: 2021/05/06 19:31:43 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*strnstr(const char *haystack, const char *needle, size_t len)
 		return (char *)(haystack);
 	nde = needle;
 	hsk = haystack;
-	while (true)
+	while (1)
 	{
 		if (*nde == '\0')
 			return (char *)(hsk - (nde - needle));
