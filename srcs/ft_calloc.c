@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hwon <hwon@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: hwon <ohj8447@gmail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/03 16:14:24 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/06 14:28:53 by hwon             ###   ########.fr       */
+/*   Created: 2021/05/06 14:41:52 by hwon              #+#    #+#             */
+/*   Updated: 2021/05/06 14:52:13 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+void	*ft_calloc(size_t count, size_t size)
 {
-	int		cmp;
+	void	*dup;
 
-	while (*s1 && *s2 && n)
-	{
-		cmp = *s1++ - *s2++;
-		if (cmp != 0)
-			return (cmp);
-		n--;
-	}
-	if (n == 0)
+	if (count <= 0 || size <= 0)
 		return (0);
-	cmp = *s1 - *s2;
-	return (cmp);
+	dup = malloc(count * size);
+	if (!dup)
+		return (0);
+	dup = ft_memset(dup, 0, count * size);
+	return (dup);
 }

@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hwon <hwon@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: hwon <ohj8447@gmail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/03 16:14:24 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/06 14:28:53 by hwon             ###   ########.fr       */
+/*   Created: 2021/05/06 14:03:23 by hwon              #+#    #+#             */
+/*   Updated: 2021/05/06 14:08:15 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+int		ft_isprint(int c)
 {
-	int		cmp;
-
-	while (*s1 && *s2 && n)
-	{
-		cmp = *s1++ - *s2++;
-		if (cmp != 0)
-			return (cmp);
-		n--;
-	}
-	if (n == 0)
-		return (0);
-	cmp = *s1 - *s2;
-	return (cmp);
+	if (c >= ' ' && c <= '~')
+		return (1);
+	return (0);
 }

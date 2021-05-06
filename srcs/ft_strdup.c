@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hwon <hwon@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: hwon <ohj8447@gmail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/03 16:14:24 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/06 14:28:53 by hwon             ###   ########.fr       */
+/*   Created: 2021/05/06 14:46:45 by hwon              #+#    #+#             */
+/*   Updated: 2021/05/06 14:51:25 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strdup(const char *s1)
 {
-	int		cmp;
-
-	while (*s1 && *s2 && n)
-	{
-		cmp = *s1++ - *s2++;
-		if (cmp != 0)
-			return (cmp);
-		n--;
-	}
-	if (n == 0)
+	char	*dup;
+	char	*anchor;;
+	
+	if (!s1)
 		return (0);
-	cmp = *s1 - *s2;
-	return (cmp);
+	dup = malloc(ft_strlen(s1) + 1);
+	if (!dup)
+		return (0);
+	anchor = dup;
+	while (*s1)
+		*dup++ = *s1++;
+	*dup = 0;
+	return (anchor);
 }

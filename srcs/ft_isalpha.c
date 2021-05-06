@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hwon <hwon@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: hwon <ohj8447@gmail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/03 16:14:24 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/06 14:28:53 by hwon             ###   ########.fr       */
+/*   Created: 2021/05/06 13:52:35 by hwon              #+#    #+#             */
+/*   Updated: 2021/05/06 13:54:56 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+int		isalpha(int c)
 {
-	int		cmp;
-
-	while (*s1 && *s2 && n)
-	{
-		cmp = *s1++ - *s2++;
-		if (cmp != 0)
-			return (cmp);
-		n--;
-	}
-	if (n == 0)
-		return (0);
-	cmp = *s1 - *s2;
-	return (cmp);
+	if (c >= 'a' && c <= 'z')
+		return (1);
+	if (c >= 'A' && c <= 'Z')
+		return (1);
+	return (0);
 }
