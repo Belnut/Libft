@@ -1,38 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwon <hwon@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/03 15:14:02 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/06 19:31:43 by hwon             ###   ########.fr       */
+/*   Created: 2021/05/03 14:14:39 by hwon              #+#    #+#             */
+/*   Updated: 2021/05/06 20:16:38 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strnstr(const char *haystack, const char *needle, size_t len)
+size_t		ft_strlen(const char *s)
 {
-	const char	*hsk;
-	const char	*nde;
+	size_t	size;
 
-	if (*needle == '\0')
-		return (char *)(haystack);
-	nde = needle;
-	hsk = haystack;
-	while (1)
-	{
-		if (*nde == '\0')
-			return (char *)(hsk - (nde - needle));
-		if (*hsk == *nde)
-			nde++;
-		else
-			nde = needle;
-		if (*hsk == '\0' || len == 0)
-			break ;
-		hsk++;
-		len--;
-	}
-	return (0);
+	size = 0;
+	while (*s++)
+		size++;
+	return (size);
 }

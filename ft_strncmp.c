@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwon <hwon@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/03 14:45:50 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/03 14:52:29 by hwon             ###   ########.fr       */
+/*   Created: 2021/05/03 16:14:24 by hwon              #+#    #+#             */
+/*   Updated: 2021/05/06 22:40:58 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+int		cmp_char(char c1, char c2)
 {
-	size_t	dstlen;
-	size_t	srclen;
-	size_t	len;
+	return ((unsigned char)c1 - (unsigned char)c2);
+}
 
-	dstlen = ft_strlen(dst);
-	srclen = ft_strlen(src);
-	if (dstsize < dstlen)
-		return (srclen + dstsize);
-	len = (dstsize - dstlen - 1);
-	while (*dst)
-		dst++;
-	while (dstlen-- != 0 && *src)
-		*dst++ = *src++;
-	*dst = 0;
-	return (dstlen + srclen);
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	int		cmp;
+
+	cmp = 0;
+	while (*s1 && *s2 && n)
+	{
+		cmp = cmp_char(*s1++, *s2++);
+		if (cmp != 0)
+			return (cmp);
+		n--;
+	}
+	if (n != 0)
+		return (cmp_char(*s1, *s2));
+	return (cmp);
 }

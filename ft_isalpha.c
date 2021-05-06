@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwon <ohj8447@gmail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/06 14:41:52 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/06 14:52:13 by hwon             ###   ########.fr       */
+/*   Created: 2021/05/06 13:52:35 by hwon              #+#    #+#             */
+/*   Updated: 2021/05/06 20:14:21 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+int		ft_isalpha(int c)
 {
-	void	*dup;
-
-	if (count <= 0 || size <= 0)
-		return (0);
-	dup = malloc(count * size);
-	if (!dup)
-		return (0);
-	dup = ft_memset(dup, 0, count * size);
-	return (dup);
+	if (c >= 'a' && c <= 'z')
+		return (1);
+	if (c >= 'A' && c <= 'Z')
+		return (1);
+	return (0);
 }

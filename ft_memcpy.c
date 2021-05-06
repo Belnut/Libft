@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hwon <ohj8447@gmail.com>                   +#+  +:+       +#+        */
+/*   By: hwon <hwon@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/06 19:24:23 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/06 19:33:04 by hwon             ###   ########.fr       */
+/*   Created: 2021/05/03 12:41:22 by hwon              #+#    #+#             */
+/*   Updated: 2021/05/07 00:08:51 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	if (fd < 0)
-		return ;
-	if (n == -2147483648)
-		write(fd, "-2147483648", 11);
-	else if (n < 0)
-	{
-		write(fd, "-", 1);
-		ft_putnbr_fd(-n, fd);
-	}
-	else
-	{
-		if (n >= 10)
-			ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);
-	}
+	unsigned char	*d;
+	unsigned char	*s;
+
+	d = (unsigned char *)dst;
+	s = (unsigned char *)src;
+	if (n == 0 || dst == 0 || src == 0)
+		return (dst);
+	while (n-- != 0)
+		*d++ = *s++;
+	return (dst);
 }

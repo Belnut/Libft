@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwon <hwon@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/03 13:38:55 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/03 14:17:50 by hwon             ###   ########.fr       */
+/*   Created: 2021/05/03 15:07:38 by hwon              #+#    #+#             */
+/*   Updated: 2021/05/06 21:27:11 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*memchr(const void *s, int c, size_t n)
+char	*ft_strrchr(const char *s, int c)
 {
-	const unsigned char *src;
+	char	*hook;
 
-	src = s;
-	while (n-- != 0)
+	hook = 0;
+	if (!s)
+		return (0);
+	while (*s)
 	{
-		if (*src == c)
-			return (void *)(src);
-		src++;
+		if (*s == c)
+			hook = (char *)s;
+		s++;
 	}
-	return (0);
+	if (c == 0)
+		return (char *)(s);
+	return (hook);
 }

@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwon <hwon@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/03 12:41:22 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/03 14:18:22 by hwon             ###   ########.fr       */
+/*   Created: 2021/05/03 15:14:02 by hwon              #+#    #+#             */
+/*   Updated: 2021/05/06 20:21:52 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	unsigned char	*d;
-	unsigned char	*s;
+	const char	*hsk;
+	const char	*nde;
 
-	d = (unsigned char *)dst;
-	s = (unsigned char *)src;
-	if (n == 0 || dst == 0 || src == 0)
-		return (dst);
-	while (n-- != 0)
-		*d++ = *s++;
-	return (dst);
+	if (*needle == '\0')
+		return (char *)(haystack);
+	nde = needle;
+	hsk = haystack;
+	while (1)
+	{
+		if (*nde == '\0')
+			return (char *)(hsk - (nde - needle));
+		if (*hsk == *nde)
+			nde++;
+		else
+			nde = needle;
+		if (*hsk == '\0' || len == 0)
+			break ;
+		hsk++;
+		len--;
+	}
+	return (0);
 }

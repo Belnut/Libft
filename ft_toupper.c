@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hwon <hwon@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: hwon <ohj8447@gmail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/03 15:07:38 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/03 15:12:53 by hwon             ###   ########.fr       */
+/*   Created: 2021/05/06 14:08:35 by hwon              #+#    #+#             */
+/*   Updated: 2021/05/06 21:14:51 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int		ft_toupper(int c)
 {
-	const char *hook;
+	int dip;
 
-	hook = 0;
-	while (*s)
-	{
-		if (*s == c)
-			hook = s;
-		s++;
-	}
-	return (char *)(hook);
+	dip = 'A' - 'a';
+	if (!ft_isalpha(c))
+		return (c);
+	if (c >= 'a' && c <= 'z')
+		c += dip;
+	return (c);
 }

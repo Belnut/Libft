@@ -6,7 +6,7 @@
 /*   By: hwon <ohj8447@gmail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 14:29:38 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/06 14:39:38 by hwon             ###   ########.fr       */
+/*   Updated: 2021/05/06 20:41:41 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ int		ft_atoi(const char *str)
 	while (str && isspace(*str))
 		str++;
 	if (isoperator(*str))
-		oper = *str++;
+		oper = isoperator(*str++);
 	while (str && ft_isdigit(*str))
 	{
 		num *= 10;
-		num += *str - '0';
+		num += (*str - '0');
 		str++;
 	}
 	return (int)(num * oper);

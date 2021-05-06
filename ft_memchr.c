@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwon <hwon@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/03 12:31:32 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/03 14:17:20 by hwon             ###   ########.fr       */
+/*   Created: 2021/05/03 13:38:55 by hwon              #+#    #+#             */
+/*   Updated: 2021/05/06 20:50:56 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	bzero(void *s, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char	*t;
+	const unsigned char *src;
 
-	t = (unsigned char *)s;
-	if (n == 0)
-		return ;
-	while (n-- > 0)
-		*t++ = 0;
+	if (!s)
+		return (0);
+	src = s;
+	while (n-- != 0)
+	{
+		if (*src == (unsigned char)c)
+			return (void *)(src);
+		src++;
+	}
+	return (0);
 }

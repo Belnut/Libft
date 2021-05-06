@@ -6,7 +6,7 @@
 /*   By: hwon <ohj8447@gmail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 16:30:46 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/06 17:46:07 by hwon             ###   ########.fr       */
+/*   Updated: 2021/05/07 00:21:03 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	index = 0;
 	s1_index = 0;
 	while (s1[s1_index])
-		if (isset(s1[s1_index], set))
+		if (!isset(s1[s1_index], set))
 			dup[index++] = s1[s1_index++];
 		else
 			s1_index++;

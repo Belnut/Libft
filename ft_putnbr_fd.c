@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwon <ohj8447@gmail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/06 14:21:45 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/06 14:23:25 by hwon             ###   ########.fr       */
+/*   Created: 2021/05/06 19:24:23 by hwon              #+#    #+#             */
+/*   Updated: 2021/05/06 22:15:02 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_tolower(int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int dip;
-
-	dip = 'A' - 'a';
-	if (!ft_isalpha(c))
-		return (0);
-	if (c >= 'A' && c <= 'z')
-		c += dip;
-	return (c);
+	if (fd < 0)
+		return ;
+	if (n == -2147483648)
+		write(fd, "-2147483648", 11);
+	else if (n < 0)
+	{
+		write(fd, "-", 1);
+		ft_putnbr_fd(-n, fd);
+	}
+	else
+	{
+		if (n >= 10)
+			ft_putnbr_fd(n / 10, fd);
+		write(fd, &"0123456789"[n % 10], 1);
+	}
 }

@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hwon <hwon@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: hwon <ohj8447@gmail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/03 12:19:49 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/03 14:18:40 by hwon             ###   ########.fr       */
+/*   Created: 2021/05/06 14:21:45 by hwon              #+#    #+#             */
+/*   Updated: 2021/05/06 21:14:39 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memest(void *b, int c, size_t len)
+int		ft_tolower(int c)
 {
-	unsigned char	*target;
+	int	dip;
 
-	if (b == 0 || len == 0)
-		return (b);
-	target = (unsigned char *)b;
-	while (len-- != 0)
-		*target++ = c;
-	return (b);
+	dip = 'a' - 'A';
+	if (!ft_isalpha(c))
+		return (c);
+	if (c >= 'A' && c <= 'Z')
+		c += dip;
+	return (c);
 }

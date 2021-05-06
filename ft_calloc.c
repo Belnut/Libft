@@ -1,61 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwon <ohj8447@gmail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/06 16:51:45 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/06 18:18:38 by hwon             ###   ########.fr       */
+/*   Created: 2021/05/06 14:41:52 by hwon              #+#    #+#             */
+/*   Updated: 2021/05/06 20:13:28 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		digit_len(int n)
+void	*ft_calloc(size_t count, size_t size)
 {
-	int				len;
-	unsigned int	num;
+	void	*dup;
 
-	if (n < 0)
-	{
-		len = 1;
-		num = n * -1;
-	}
-	else
-	{
-		len = 0;
-		num = n;
-	}
-	while (num != 0)
-	{
-		len++;
-		num /= 10;
-	}
-	return (len);
-}
-
-char	*ft_itoa(int n)
-{
-	char			*dup;
-	int				len;
-	unsigned int	num;
-
-	len = digit_len(n);
-	dup = malloc(len + 1);
-	ft_memset(dup, 0, len + 1);
+	if (count <= 0 || size <= 0)
+		return (0);
+	dup = malloc(count * size);
 	if (!dup)
 		return (0);
-	num = n;
-	if (n < 0)
-	{
-		num = n * -1;
-		dup[0] = '-';
-	}
-	while (num != 0)
-	{
-		dup[--len] = num % 10;
-		num /= 10;
-	}
+	ft_memset(dup, 0, count * size);
 	return (dup);
 }
