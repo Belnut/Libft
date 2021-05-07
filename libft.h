@@ -6,7 +6,7 @@
 /*   By: hwon <hwon@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 14:21:44 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/07 02:03:37 by hwon             ###   ########.fr       */
+/*   Updated: 2021/05/07 10:57:29 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,22 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+
+typedef struct		s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
+
+t_list	*ft_lstnew(void *content);
+void	ft_lstadd_font(t_list **lst, t_list *new);
+int		ft_litsize(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
+void	ft_lstclear(t_list **lst, void (*del)(void *));
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 void	ft_bzero(void *s, size_t n);
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n);

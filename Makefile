@@ -6,7 +6,7 @@
 #    By: hwon <hwon@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 03:10:18 by hwon              #+#    #+#              #
-#    Updated: 2021/05/06 22:20:38 by hwon             ###   ########.fr        #
+#    Updated: 2021/05/07 11:00:15 by hwon             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,8 @@ SRCS	= ft_memset.c\
 		  ft_putchar_fd.c\
 		  ft_putstr_fd.c\
 		  ft_putendl_fd.c\
-		  ft_putnbr_fd.c
+		  ft_putnbr_fd.c\
+		  ft_lstnew.c
 OBJS	= ${SRCS:.c=.o}
 CC		= gcc
 AR		= ar
