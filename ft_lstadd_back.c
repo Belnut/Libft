@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hwon <ohj8447@gmail.com>                   +#+  +:+       +#+        */
+/*   By: hwon <hwon@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/07 11:00:53 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/07 14:55:32 by hwon             ###   ########.fr       */
+/*   Created: 2021/05/07 13:49:04 by hwon              #+#    #+#             */
+/*   Updated: 2021/05/07 15:02:17 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (!new)
+	t_list	*hook;
+
+	if (lst == 0)
 		return ;
-	new->next = *lst;
-	*lst = new;
+	if (*lst == 0)
+	{
+		*lst = new;
+		return ;
+	}
+	hook = *lst;
+	while (hook->next != 0)
+		hook = hook->next;
+	hook->next = new;
 }
