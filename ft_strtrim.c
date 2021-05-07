@@ -6,7 +6,7 @@
 /*   By: hwon <ohj8447@gmail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 16:30:46 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/07 02:00:31 by hwon             ###   ########.fr       */
+/*   Updated: 2021/05/07 16:12:12 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int		find_back(const char *str, const char *set)
 {
 	size_t back;
 
+	if (ft_strlen(str) == 0)
+		return (0);
 	back = ft_strlen(str) - 1;
 	while (back != 0)
 	{
@@ -50,6 +52,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (0);
 	start = find_start(s1, set);
 	end = find_back(s1, set);
-	dup = ft_substr(s1, start, (end - start) + 1);
+	if (start >= end)
+		return (ft_strdup(""));
+	dup = ft_strndup(&s1[start], (end - start) + 1);
 	return (dup);
 }
