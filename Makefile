@@ -6,9 +6,13 @@
 #    By: hwon <hwon@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 03:10:18 by hwon              #+#    #+#              #
-#    Updated: 2021/05/07 14:07:12 by hwon             ###   ########.fr        #
+#    Updated: 2021/05/08 16:55:46 by hwon             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+#TODO: 
+# 1. add bonus rule
+# 2. add free in ft_split if func is failed when split and create words
 
 NAME	= libft.a
 SRCS	= ft_memset.c\
