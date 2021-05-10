@@ -6,12 +6,11 @@
 #    By: hwon <hwon@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 03:10:18 by hwon              #+#    #+#              #
-#    Updated: 2021/05/08 16:55:46 by hwon             ###   ########.fr        #
+#    Updated: 2021/05/10 18:59:04 by hwon             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #TODO: 
-# 1. add bonus rule
 # 2. add free in ft_split if func is failed when split and create words
 
 NAME	= libft.a
@@ -49,7 +48,8 @@ SRCS	= ft_memset.c\
 		  ft_putstr_fd.c\
 		  ft_putendl_fd.c\
 		  ft_putnbr_fd.c\
-		  ft_lstnew.c\
+		  ft_strndup.c
+SRCS_B	= ft_lstnew.c\
 		  ft_lstadd_front.c\
 		  ft_lstsize.c\
 		  ft_lstlast.c\
@@ -59,6 +59,7 @@ SRCS	= ft_memset.c\
 		  ft_lstiter.c\
 		  ft_lstmap.c
 OBJS	= ${SRCS:.c=.o}
+OBJS_B	= ${SRCS_B:.c=.o}
 CC		= gcc
 AR		= ar
 RM		= rm -f
@@ -69,12 +70,15 @@ ARFLAGS = rs
 	$(CC) $(CFLAGS) -c $< -o ${<:.c=.o}
 
 $(NAME) : $(OBJS)
-	$(AR) $(ARFLAGS) $(NAME) $ $(OBJS)
+	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
+
+bonus : $(OBJS) $(OBJS_B)
+	$(AR) $(ARFLAGS) $(NAME) $^
 
 all : $(NAME)
 
 clean :
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(OBJS_B)
 
 fclean : clean
 	$(RM) $(NAME)
@@ -82,7 +86,7 @@ fclean : clean
 re : fclean all
 
 norm :
-	norminette -R CheckForbiddenSourceHeader $(SRCS)
+	norminette -R CheckForbiddenSourceHeader $(SRCS) $(SRCS_B)
 	norminette -R CheckDefine libft.h
 
 .PHONY: all clean fclean re .c.o norm

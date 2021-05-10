@@ -6,7 +6,7 @@
 /*   By: hwon <hwon@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 14:21:44 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/07 15:23:24 by hwon             ###   ########.fr       */
+/*   Updated: 2021/05/10 18:50:20 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdlib.h>
 # include <limits.h>
 
-typedef struct		s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;

@@ -6,13 +6,13 @@
 /*   By: hwon <ohj8447@gmail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 14:21:45 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/06 21:14:39 by hwon             ###   ########.fr       */
+/*   Updated: 2021/05/10 18:38:53 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	int	dip;
 

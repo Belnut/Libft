@@ -6,13 +6,13 @@
 /*   By: hwon <ohj8447@gmail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 14:03:23 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/06 14:08:15 by hwon             ###   ########.fr       */
+/*   Updated: 2021/05/10 18:38:26 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	if (c >= ' ' && c <= '~')
 		return (1);

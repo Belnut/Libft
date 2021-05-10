@@ -6,13 +6,13 @@
 /*   By: hwon <hwon@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 13:45:27 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/07 15:13:10 by hwon             ###   ########.fr       */
+/*   Updated: 2021/05/10 18:59:27 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int		count;
 

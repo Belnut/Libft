@@ -6,13 +6,13 @@
 /*   By: hwon <ohj8447@gmail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 16:55:24 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/07 02:03:03 by hwon             ###   ########.fr       */
+/*   Updated: 2021/05/10 18:56:27 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_count_words(const char *str, char c)
+static int	count_words(const char *str, char c)
 {
 	const char	*start;
 	int			word_size;
@@ -40,27 +40,9 @@ int		ft_count_words(const char *str, char c)
 	return (count);
 }
 
-char	*ft_strndup(const char *str, size_t n)
-{
-	char	*dup;
-	char	*anchor;
-
-	if ((dup = malloc(sizeof(char) * (n + 1))) == 0)
-		return (0);
-	anchor = dup;
-	while (n > 0)
-	{
-		*dup++ = *str++;
-		n--;
-	}
-	*dup = '\0';
-	return (anchor);
-}
-
-void	add_words(char **dest, const char *str, char c)
+static int	add_words(char **dest, const char *str, char c)
 {
 	const char	*start;
-	int			word_size;
 
 	start = str;
 	while (1)
@@ -68,18 +50,29 @@ void	add_words(char **dest, const char *str, char c)
 		while (*str != '\0' && *str == c)
 			str++;
 		start = str;
-		word_size = 0;
 		while (*str != '\0' && *str != c)
-		{
 			str++;
-			word_size++;
+		if (str != start)
+		{
+			*dest = ft_strndup(start, str - start);
+			if (dest == 0)
+				return (0);
 		}
-		if (word_size > 0)
-			*dest++ = ft_strndup(start, word_size);
 		if (*str == '\0')
 			break ;
-		str++;
+		dest++;
 	}
+	return (1);
+}
+
+static void	free_mems(char **dest)
+{
+	char	**anchor;
+
+	anchor = dest;
+	while (*dest != 0)
+		free(dest++);
+	free(anchor);
 }
 
 char	**ft_split(const char *str, char c)
@@ -89,11 +82,16 @@ char	**ft_split(const char *str, char c)
 
 	if (!str)
 		return (0);
-	size = ft_count_words(str, c);
+	size = count_words(str, c);
 	words = malloc(sizeof(char *) * (size + 1));
 	if (words == 0)
 		return (0);
-	add_words(words, str, c);
+	words = ft_memset(words, 0, (sizeof(char *) * (size + 1)));
+	if (add_words(words, str, c) == 0)
+	{
+		free_mems(words);
+		return (0);
+	}
 	words[size] = 0;
 	return (words);
 }

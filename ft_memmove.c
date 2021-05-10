@@ -6,7 +6,7 @@
 /*   By: hwon <hwon@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 13:18:01 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/07 01:20:11 by hwon             ###   ########.fr       */
+/*   Updated: 2021/05/10 18:24:58 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char *d;
-	unsigned char *s;
+	unsigned char	*d;
+	unsigned char	*s;
 
 	if (dst == src || len == 0)
 		return (dst);

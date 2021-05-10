@@ -6,13 +6,13 @@
 /*   By: hwon <ohj8447@gmail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 16:30:46 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/07 16:12:12 by hwon             ###   ########.fr       */
+/*   Updated: 2021/05/10 18:40:44 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		find_start(const char *str, const char *set)
+int	find_start(const char *str, const char *set)
 {
 	size_t	start;
 
@@ -26,9 +26,9 @@ int		find_start(const char *str, const char *set)
 	return (start);
 }
 
-int		find_back(const char *str, const char *set)
+int	find_back(const char *str, const char *set)
 {
-	size_t back;
+	size_t	back;
 
 	if (ft_strlen(str) == 0)
 		return (0);

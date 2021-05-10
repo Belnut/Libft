@@ -6,13 +6,13 @@
 /*   By: hwon <ohj8447@gmail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 14:29:38 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/07 01:33:34 by hwon             ###   ########.fr       */
+/*   Updated: 2021/05/10 18:40:08 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		isoperator(int c)
+int	isoperator(int c)
 {
 	if (c == '+')
 		return (1);
@@ -21,7 +21,7 @@ int		isoperator(int c)
 	return (0);
 }
 
-int		isspace(int c)
+int	isspace(int c)
 {
 	if (c == ' ' || c == '\t' || c == '\n')
 		return (1);
@@ -30,7 +30,7 @@ int		isspace(int c)
 	return (0);
 }
 
-int		ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	unsigned long long	num;
 	int					oper;
@@ -51,5 +51,5 @@ int		ft_atoi(const char *str)
 		return (0);
 	if (num > LONG_MAX && oper == 1)
 		return (-1);
-	return (int)(num * oper);
+	return ((int)(num * oper));
 }
