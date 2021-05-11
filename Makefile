@@ -6,12 +6,9 @@
 #    By: hwon <hwon@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 03:10:18 by hwon              #+#    #+#              #
-#    Updated: 2021/05/10 18:59:04 by hwon             ###   ########.fr        #
+#    Updated: 2021/05/11 13:11:29 by hwon             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-#TODO: 
-# 2. add free in ft_split if func is failed when split and create words
 
 NAME	= libft.a
 SRCS	= ft_memset.c\
