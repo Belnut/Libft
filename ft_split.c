@@ -6,7 +6,7 @@
 /*   By: hwon <ohj8447@gmail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 16:55:24 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/10 18:56:27 by hwon             ###   ########.fr       */
+/*   Updated: 2021/05/11 13:08:09 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ static void	free_mems(char **dest)
 	free(anchor);
 }
 
-char	**ft_split(const char *str, char c)
+char		**ft_split(const char *str, char c)
 {
 	char	**words;
 	int		size;
