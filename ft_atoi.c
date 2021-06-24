@@ -6,7 +6,7 @@
 /*   By: hwon <ohj8447@gmail.com>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 14:29:38 by hwon              #+#    #+#             */
-/*   Updated: 2021/05/10 18:40:08 by hwon             ###   ########.fr       */
+/*   Updated: 2021/06/24 20:47:54 by hwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ int	ft_atoi(const char *str)
 		num += (*str - '0');
 		str++;
 	}
-	if (num > LONG_MAX - 1 && oper == -1)
+	if (num > LONG_MAX && oper == -1)
 		return (0);
-	if (num > LONG_MAX && oper == 1)
+	if (num > LONG_MAX - 1 && oper == 1)
 		return (-1);
 	return ((int)(num * oper));
 }
